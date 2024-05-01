@@ -1,0 +1,11 @@
+image:
+  repository: ollama/ollama
+  tag: latest
+command:
+  - "docker"
+  - "exec"
+  - "-it"
+  - "ollama"
+  - "ollama"
+  - "run"
+  - "gemma:2b"
