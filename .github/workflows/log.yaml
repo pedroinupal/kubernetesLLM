@@ -1,0 +1,23 @@
+name: Add Log on Webhook
+
+on:
+  repository_dispatch:
+    types: [webhook-event]
+
+jobs:
+  add_log:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v2
+
+      - name: Add Log
+        run: echo "$(date)" >> log.txt
+
+      - name: Commit and Push Changes
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add log.txt
+          git commit -m "Add log entry via GitHub Action"
+          git push
