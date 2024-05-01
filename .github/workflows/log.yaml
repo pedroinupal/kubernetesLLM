@@ -2,7 +2,6 @@ name: Add Log on Webhook
 
 on:
   repository_dispatch:
-    types: [webhook-event]
 
 jobs:
   add_log:
